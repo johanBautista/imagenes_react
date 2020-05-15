@@ -24,7 +24,7 @@ const Buscador = styled.input`
   font-size: 20px;
   padding: 10px;
   border: none;
-  width: 70%;
+  width: 60%;
   border-radius: 10px;
   color: #6b6b6b;
   transition: background-color 0.3s ease;
@@ -46,7 +46,6 @@ const Formulario = ({ guardarBusqueda }) => {
       return;
     }
     guardarError(false);
-    console.log('hola');
     guardarBusqueda(texto);
   };
 
