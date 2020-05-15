@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Error from './Error';
+import Header from './Header';
 
 const Boton = styled.input`
   margin-top: 20px;
@@ -51,6 +52,8 @@ const Formulario = ({ guardarBusqueda }) => {
 
   return (
     <div>
+      <Header titulo="Buscador de imágenes" />
+
       <form onSubmit={handleSubmit}>
         {error ? <Error mensaje="Por favor utilizar el buscador" /> : null}
         <Buscador

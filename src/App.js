@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Components/Header';
 import Formulario from './Components/Formulario';
 import ListadoImagenes from './Components/ListadoImagenes';
 
@@ -22,7 +21,6 @@ function App() {
 
   return (
     <div className="container">
-      <Header titulo="Buscador de imágenes" />
       <div className="contenido-principal contenido">
         <Formulario busqueda={busqueda} guardarBusqueda={guardarBusqueda} />
       </div>

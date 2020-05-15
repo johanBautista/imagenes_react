@@ -3,11 +3,10 @@ import Imagen from './Imagen';
 
 const ListadoImagenes = ({ imagenes }) => {
   return (
-    <div>
+    <div className="col-12 p-5 row">
       {imagenes.map((imagen) => (
         <Imagen key={imagen.id} imagen={imagen} />
       ))}
-      <h2>hollaa</h2>
     </div>
   );
 };
