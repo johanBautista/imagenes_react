@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import Error from './Error';
 import Header from './Header';
 
+import PropTypes from 'prop-types';
+
 const Boton = styled.input`
   margin-top: 20px;
   font-weight: bold;
@@ -58,14 +60,25 @@ const Formulario = ({ guardarBusqueda }) => {
         {error ? <Error mensaje="Por favor utilizar el buscador" /> : null}
         <Buscador
           name="imagenTexto"
-          placeholder="Buscar imagen"
+          placeholder="Ej: Café"
           type="text"
           onChange={(e) => guardarTexto(e.target.value)}
         />
         <Boton value="Buscar" type="submit" />
       </form>
+      <a
+        href="https://pixabay.com/es/"
+        className="enlace"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <small>pixabay</small>
+      </a>
     </div>
   );
 };
 
+Formulario.protoTypes = {
+  guardarBusqueda: PropTypes.func.isRequired,
+};
 export default Formulario;

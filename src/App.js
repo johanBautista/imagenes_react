@@ -13,7 +13,7 @@ function App() {
       if (busqueda === '') return;
       const imagenesPorPagina = 30;
       const key = '16563696-8ef8c45baee9f20cbc7294464';
-      const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page=${imagenesPorPagina}`;
+      const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page=${imagenesPorPagina}&page=${paginaactual}`;
 
       const respuesta = await fetch(url);
       const resultado = await respuesta.json();
@@ -26,7 +26,20 @@ function App() {
       guardarTotalPagins(calcularTotalPaginas);
     };
     consultarApi();
-  }, [busqueda]);
+  }, [busqueda, paginaactual]);
+
+  //
+  const paginaAnterior = () => {
+    const nuevaPaginaActual = paginaactual - 1;
+    if (nuevaPaginaActual === 0) return;
+    guardarPAginaActual(nuevaPaginaActual);
+  };
+
+  const paginaSiguiente = () => {
+    const nuevaPaginaActual = paginaactual + 1;
+    if (nuevaPaginaActual > totalpaginas) return;
+    guardarPAginaActual(nuevaPaginaActual);
+  };
 
   return (
     <div className="container">
@@ -34,6 +47,28 @@ function App() {
         <Formulario busqueda={busqueda} guardarBusqueda={guardarBusqueda} />
       </div>
       <div className="row justify-content-center">
+        <div className="paginacion">
+          {paginaactual === 1 ? null : (
+            <button
+              type="button"
+              className="bbtn btn-info mr-1"
+              onClick={paginaAnterior}
+            >
+              &laquo; Anterior
+            </button>
+          )}
+
+          {paginaactual === totalpaginas ? null : (
+            <button
+              type="button"
+              className="bbtn btn-info mr-1"
+              onClick={paginaSiguiente}
+            >
+              Siguiente &raquo;
+            </button>
+          )}
+        </div>
+
         <ListadoImagenes imagenes={imagenes} />
       </div>
     </div>

@@ -2,9 +2,6 @@
   margin-bottom: 0 !important;
 }
 body {
-  background: #00280f; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #009266, #002819);
-  background: linear-gradient(to right, #009266, #002819);
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -17,7 +14,8 @@ header {
 }
 .contenido-principal {
   margin-top: 30px;
-  background-color: white;
+  background: -webkit-linear-gradient(to right, #009266, #002819);
+  background: linear-gradient(to right, #009266, #002819);
   padding: 30px;
   border-radius: 20px;
 }
@@ -27,7 +25,7 @@ h1 {
   font-weight: 100;
   color: white;
   text-align: center;
-  font-size: 4.8rem !important;
+  font-size: 2.8rem !important;
 }
 h2 {
   font-family: 'Raleway', sans-serif;
@@ -51,4 +49,13 @@ h2 {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+.paginacion {
+  margin-top: 20px;
+}
+.enlace{
+  color: white;
+  font-size: large;
+  font-family: cursive;
 }
