@@ -29,11 +29,10 @@ const Buscador = styled.input`
   border: none;
   width: 60%;
   border-radius: 10px;
-  color: #6b6b6b;
+  color: #004e9298;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #00cc995f;
     cursor: pointer;
   }
 `;
